@@ -25,9 +25,15 @@ body {
   --crema: #f8e3b0;           /* crema (ya usado) */
 }
 
-/* Tipografías góticas/victorianas (usa el snippet del <head> que te paso en el chat) */
-body, .btn-comprar { font-family: 'Cinzel', serif; }
-.titulo-logo, h1, h2, h3 { font-family: 'UnifrakturMaguntia', cursive; letter-spacing: .5px; }
+/* Tipografías góticas/victorianas */
+body, p, a, li, span, .btn-comprar, #carrito, .tooltip-info {
+  font-family: 'UnifrakturCook', cursive;
+}
+
+.titulo-logo, h1, h2, h3 {
+  font-family: 'Cinzel Decorative', serif;
+  letter-spacing: .5px;
+}
 
 /* Fondo: pergamino oscuro + viñeta */
 body {
