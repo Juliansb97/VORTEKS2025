@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creatinas - VORTEKS</title>
+  <link rel="icon" type="image/png" href="LOGO.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+  <style>
+    body { 
+      font-family: 'Alfa Slab One', cursive; 
+      background: url('xxxx') no-repeat center center fixed;
+      background-size: cover;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(50,0,70,0.85));
+      backdrop-filter: blur(6px);
+      z-index: -1;
+    }
+    .titulo-logo {
+      color: #f8e3b0; 
+      text-shadow: 0px 0px 8px #ffcc80, 0px 0px 15px #ff006e;
+      animation: brillo 2s infinite alternate;
+    }
+    @keyframes brillo {
+      from { filter: drop-shadow(0 0 3px #ffcc80); }
+      to { filter: drop-shadow(0 0 12px #ff006e); }
+    }
+    .precio {
+      color: #00ff7f;
+      font-weight: bold;
+    }
+    .producto-card {
+      background: rgba(17, 17, 17, 0.6);
+      border: 1px solid rgba(248, 227, 176, 0.2);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0px 0px 12px rgba(248, 227, 176, 0.15);
+    }
+    .producto-card:hover {
+      border-color: #f8e3b0;
+      box-shadow: 0px 0px 20px #f8e3b0;
+      transform: translateY(-5px) scale(1.03);
+    }
+    .imagen-producto {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      overflow: hidden;
+      border: 2px solid #f8e3b0;
+    }
+    .imagen-producto img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+    .btn-comprar {
+      background: linear-gradient(90deg, #f8e3b0, #ffcc80);
+      color: #000;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .btn-comprar:hover {
+      background: linear-gradient(90deg, #ffe9b3, #ffdf99);
+      transform: scale(1.05);
+    }
+    .tooltip-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 2px solid #f8e3b0;
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(6px);
+      transition: all 0.4s ease;
+    }
+    .producto-card:hover .tooltip-info {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  </style>
+
+  <script defer src="carrito.js"></script>
+</head>
+<body class="text-white">
+
+  <!-- Menú superior -->
+  <nav class="bg-black/70 backdrop-blur-lg fixed top-0 left-0 w-full z-50 border-b border-yellow-400">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="LOGO.png" alt="Logo VORTEKS" class="w-12 h-12">
+        <span class="titulo-logo text-2xl">VORTEKS</span>
+      </a>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-yellow-400">Inicio</a>
+        <div class="relative group">
+          <button class="hover:text-yellow-400">Productos ▾</button>
+          <div class="absolute hidden group-hover:block bg-gray-900/90 border border-yellow-400 mt-2 rounded-lg shadow-xl">
+            <a href="creatina.html" class="block px-4 py-2 hover:bg-yellow-400 hover:text-black">Creatinas</a>
+            <a href="bcaa.html" class="block px-4 py-2 hover:bg-yellow-400 hover:text-black">BCAA</a>
+            <a href="proteina.html" class="block px-4 py-2 hover:bg-yellow-400 hover:text-black">Proteínas</a>
+          </div>
+        </div>
+        <a href="contacto.html" class="hover:text-yellow-400">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Encabezado -->
+  <header class="flex flex-col items-center justify-center pt-28 pb-10">
+    <h1 class="titulo-logo text-4xl">Creatinas VORTEKS</h1>
+  </header>
+
+  <!-- Imagen promocional -->
+  <section class="p-6 flex justify-center">
+    <img src="HISTORIETA1.png" alt="Promoción Creatina VORTEKS" 
+         class="rounded-lg shadow-2xl w-[300px] sm:w-[400px] md:w-[500px] border border-yellow-400">
+  </section>
+
+  <!-- Título -->
+  <section class="p-6 text-center">
+    <h2 class="titulo-logo text-3xl mb-4">Creatinas disponibles</h2>
+    <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+      Apoya tu rendimiento y recuperación muscular con nuestras creatinas de alta calidad.
+    </p>
+
+    <!-- Productos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Producto 1 -->
+      <div class="producto-card p-6 text-center">
+        <div class="imagen-producto mb-4">
+          <img src="FOTOCREA3.jpeg" alt="Creatina con Beta-Alanina">
+        </div>
+        <h3 class="titulo-logo text-xl mb-2">Creatina con Beta-Alanina</h3>
+        <p class="precio mt-3">$145.000 COP</p>
+        <button onclick="abrirModal({titulo:'Creatina con Beta-Alanina',imagenes:['FOTOCREA1.png','FOTOCREA2.png','FOTOCREA3.jpeg'],precio:145000,descripcion:['Mejora el rendimiento','Retrasa la fatiga muscular','Ideal para rutinas intensas']})" class="btn-comprar mt-2 w-full py-2 rounded">Ver más</button>
+        <button onclick="agregarAlCarrito('Creatina con Beta-Alanina',145000,'FOTOCREA3.jpeg')" class="btn-comprar mt-2 w-full py-2 rounded">Agregar al carrito</button>
+        <div class="tooltip-info">Mejora el rendimiento y retrasa la fatiga.</div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="producto-card p-6 text-center">
+        <div class="imagen-producto mb-4">
+          <img src="creatina2.jpg" alt="Creatina Monohidrato 100% Pura">
+        </div>
+        <h3 class="titulo-logo text-xl mb-2">Creatina Monohidrato 100% Pura</h3>
+        <p class="precio mt-3">$150.000 COP</p>
+        <button onclick="abrirModal({titulo:'Creatina Monohidrato 100% Pura',imagenes:['creatina2.jpg','creatina2b.jpg'],precio:150000,descripcion:['Aumenta fuerza y energía','Favorece la recuperación muscular','Perfecta para entrenamientos intensos']})" class="btn-comprar mt-2 w-full py-2 rounded">Ver más</button>
+        <button onclick="agregarAlCarrito('Creatina Monohidrato 100% Pura',150000,'creatina2.jpg')" class="btn-comprar mt-2 w-full py-2 rounded">Agregar al carrito</button>
+        <div class="tooltip-info">Potencia tu rendimiento físico.</div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="producto-card p-6 text-center">
+        <div class="imagen-producto mb-4">
+          <img src="creatina3.jpg" alt="Creatina Micronizada 300g">
+        </div>
+        <h3 class="titulo-logo text-xl mb-2">Creatina Micronizada 300g</h3>
+        <p class="precio mt-3">$130.000 COP</p>
+        <button onclick="abrirModal({titulo:'Creatina Micronizada 300g',imagenes:['creatina3.jpg','creatina3b.jpg'],precio:130000,descripcion:['Textura más fina, fácil de disolver','Rápida absorción','Ideal para atletas exigentes']})" class="btn-comprar mt-2 w-full py-2 rounded">Ver más</button>
+        <button onclick="agregarAlCarrito('Creatina Micronizada 300g',130000,'creatina3.jpg')" class="btn-comprar mt-2 w-full py-2 rounded">Agregar al carrito</button>
+        <div class="tooltip-info">Textura más fina y fácil de disolver.</div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="producto-card p-6 text-center">
+        <div class="imagen-producto mb-4">
+          <img src="creatina4.jpg" alt="Creatina + Taurina">
+        </div>
+        <h3 class="titulo-logo text-xl mb-2">Creatina + Taurina</h3>
+        <p class="precio mt-3">$155.000 COP</p>
+        <button onclick="abrirModal({titulo:'Creatina + Taurina',imagenes:['creatina4.jpg','creatina4b.jpg'],precio:155000,descripcion:['Incrementa resistencia','Favorece recuperación rápida','Perfecta para deportes explosivos']})" class="btn-comprar mt-2 w-full py-2 rounded">Ver más</button>
+        <button onclick="agregarAlCarrito('Creatina + Taurina',155000,'creatina4.jpg')" class="btn-comprar mt-2 w-full py-2 rounded">Agregar al carrito</button>
+        <div class="tooltip-info">Resistencia y recuperación rápida.</div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="producto-card p-6 text-center">
+        <div class="imagen-producto mb-4">
+          <img src="creatina5.jpg" alt="Creatina Líquida">
+        </div>
+        <h3 class="titulo-logo text-xl mb-2">Creatina Líquida</h3>
+        <p class="precio mt-3">$140.000 COP</p>
+        <button onclick="abrirModal({titulo:'Creatina Líquida',imagenes:['creatina5.jpg','creatina5b.jpg'],precio:140000,descripcion:['Absorción inmediata','Práctica y lista para tomar','Ideal para entrenamientos rápidos']})" class="btn-comprar mt-2 w-full py-2 rounded">Ver más</button>
+        <button onclick="agregarAlCarrito('Creatina Líquida',140000,'creatina5.jpg')" class="btn-comprar mt-2 w-full py-2 rounded">Agregar al carrito</button>
+        <div class="tooltip-info">Absorción inmediata y práctica.</div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="producto-card p-6 text-center">
+        <div class="imagen-producto mb-4">
+          <img src="creatina6.jpg" alt="Creatina en Gomitas">
+        </div>
+        <h3 class="titulo-logo text-xl mb-2">Creatina en Gomitas</h3>
+        <p class="precio mt-3">$135.000 COP</p>
+        <button onclick="abrirModal({titulo:'Creatina en Gomitas',imagenes:['creatina6.jpg','creatina6b.jpg'],precio:135000,descripcion:['Fácil de consumir','Deliciosas y efectivas','Ideal para cualquier momento del día']})" class="btn-comprar mt-2 w-full py-2 rounded">Ver más</button>
+        <button onclick="agregarAlCarrito('Creatina en Gomitas',135000,'creatina6.jpg')" class="btn-comprar mt-2 w-full py-2 rounded">Agregar al carrito</button>
+        <div class="tooltip-info">Deliciosa y práctica.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal-producto" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" onclick="cerrarModal(event)">
+    <div class="modal-content bg-gray-900 rounded-lg p-6 w-[90%] max-w-sm relative shadow-xl border-2 border-yellow-400">
+      <button onclick="cerrarModal()" 
+        class="absolute -top-4 -right-4 bg-red-500 hover:bg-red-400 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-lg transition">
+        &times;
+      </button>
+      <div class="relative mb-4">
+        <img id="modal-img" src="" alt="Producto" class="rounded-lg">
+        <button onclick="cambiarImagen(-1)" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-yellow-400 text-black px-2 py-1 rounded-l">‹</button>
+        <button onclick="cambiarImagen(1)" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-yellow-400 text-black px-2 py-1 rounded-r">›</button>
+      </div>
+      <h3 id="modal-titulo" class="titulo-logo text-xl mb-2 text-center"></h3>
+      <p id="modal-precio" class="precio mb-4 text-center"></p>
+      <ul id="modal-descripcion" class="text-gray-300 mb-6 list-disc list-inside"></ul>
+      <button id="modal-add-cart" class="btn-comprar w-full py-2 rounded">Agregar al carrito</button>
+      <button onclick="cerrarModal()" class="mt-3 w-full bg-red-500 py-2 rounded hover:bg-red-400 transition">Cerrar ventana</button>
+    </div>
+  </div>
+
+  <!-- Botón Carrito -->
+  <button onclick="toggleCarrito()" aria-label="Abrir carrito de compras" class="fixed top-6 right-6 bg-yellow-400 text-black p-2 rounded-full shadow-2xl hover:scale-105 transition duration-300 z-50">
+    🛒
+  </button>
+
+  <!-- Carrito flotante -->
+  <div id="carrito" class="hidden fixed top-20 right-6 bg-gray-900 text-white w-80 p-4 rounded-xl shadow-lg z-50">
+    <h3 class="text-xl font-bold mb-2 text-yellow-300">Carrito de Compras</h3>
+    <div id="carrito-items" class="mb-2 max-h-60 overflow-y-auto"></div>
+    <div class="flex justify-between text-yellow-400 font-semibold mb-2">
+      <span>Total:</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button onclick="vaciarCarrito()" class="w-full bg-red-500 text-white py-1 rounded hover:bg-red-400">Vaciar carrito</button>
+  </div>
+
+  <footer class="p-4 text-center text-gray-500 text-sm border-t border-gray-800">
+    © 2025 VORTEKS. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    let imagenesModal = [];
+    let indiceImagen = 0;
+    let productoActual = {};
+
+    function abrirModal(producto) {
+      productoActual = producto;
+      document.getElementById('modal-titulo').textContent = producto.titulo;
+      document.getElementById('modal-precio').textContent = "$" + producto.precio.toLocaleString() + " COP";
+      imagenesModal = producto.imagenes;
+      indiceImagen = 0;
+      document.getElementById('modal-img').src = imagenesModal[0];
+      let listaHTML = "";
+      producto.descripcion.forEach(item => {
+        listaHTML += `<li>${item}</li>`;
+      });
+      document.getElementById('modal-descripcion').innerHTML = listaHTML;
+      document.getElementById('modal-producto').classList.remove('hidden');
+    }
+
+    function cambiarImagen(direccion) {
+      indiceImagen = (indiceImagen + direccion + imagenesModal.length) % imagenesModal.length;
+      document.getElementById('modal-img').src = imagenesModal[indiceImagen];
+    }
+
+    function cerrarModal(e) {
+      if (!e || e.target.id === 'modal-producto') {
+        document.getElementById('modal-producto').classList.add('hidden');
+      }
+    }
+
+    document.getElementById('modal-add-cart').addEventListener('click', function() {
+      agregarAlCarrito(productoActual.titulo, productoActual.precio, productoActual.imagenes[0]);
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        document.getElementById('modal-producto').classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
