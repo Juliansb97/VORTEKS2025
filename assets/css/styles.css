@@ -7,31 +7,12 @@ body {
   color: #fff;
 }
 
-/* Títulos y botones con Orbitron futurista */
-h1, h2, h3, h4, .titulo-logo, .btn-comprar {
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
+
 
 .titulo-logo {
   color: #f8e3b0;
   text-shadow: 0 0 8px #ffcc80, 0 0 12px #ff0000;
 }
-
-.btn-comprar {
-  background: linear-gradient(135deg, #f8e3b0, #ffcc80);
-  border: none;
-  font-weight: bold;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* ===============================
-   TEMA GÓTICO VICTORIANO — SOLO ESTÉTICA
-   Paleta: rojo, negro, dorado, blanco y crema
-   Uso: pega este bloque AL FINAL de tu <style> en "creatina (13).html"
-        o cópialo a "styles (1).css" para aplicarlo a toda la web.
-   =============================== */
 
 /* Paleta central */
 :root {
