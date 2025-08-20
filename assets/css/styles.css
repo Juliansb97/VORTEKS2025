@@ -26,6 +26,196 @@ h1, h2, h3, h4, .titulo-logo, .btn-comprar {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* ===============================
+   TEMA GÓTICO VICTORIANO — SOLO ESTÉTICA
+   Paleta: rojo, negro, dorado, blanco y crema
+   Uso: pega este bloque AL FINAL de tu <style> en "creatina (13).html"
+        o cópialo a "styles (1).css" para aplicarlo a toda la web.
+   =============================== */
+
+/* Paleta central */
+:root {
+  --rojo: #b01227;            /* rojo vino intenso */
+  --rojo-brillo: #e11d2e;     /* acento rojo */
+  --negro: #0b0b0c;
+  --dorado: #d4af37;          /* gold clásico */
+  --dorado-claro: #f1d98a;    /* gold suave para hover */
+  --blanco: #ffffff;
+  --crema: #f8e3b0;           /* crema (ya usado) */
+}
+
+/* Tipografías góticas/victorianas (usa el snippet del <head> que te paso en el chat) */
+body, .btn-comprar { font-family: 'Cinzel', serif; }
+.titulo-logo, h1, h2, h3 { font-family: 'UnifrakturMaguntia', cursive; letter-spacing: .5px; }
+
+/* Fondo: pergamino oscuro + viñeta */
+body {
+  background: radial-gradient(1200px 800px at 50% 10%, rgba(255,255,255,0.04), transparent 60%),
+              radial-gradient(800px 600px at 80% 0%, rgba(209,164,64,0.05), transparent 60%),
+              linear-gradient(180deg, rgba(248,227,176,0.06), rgba(0,0,0,0.2)),
+              #0a0a0a;
+  color: var(--blanco);
+}
+body::after{
+  content:""; position: fixed; inset:0; pointer-events:none;
+  background: radial-gradient(1200px 500px at 50% -20%, rgba(0,0,0,0.6), transparent 60%),
+              radial-gradient(1200px 500px at 50% 120%, rgba(0,0,0,0.6), transparent 60%);
+  box-shadow: inset 0 0 0 1px rgba(212,175,55,.2);
+  z-index:-1;
+}
+
+/* Encabezados dorados con relieve */
+.titulo-logo{
+  color: transparent;
+  background: linear-gradient(180deg, var(--dorado), var(--crema) 40%, #8a6b1e 90%);
+  -webkit-background-clip: text; background-clip: text;
+  text-shadow: 0 0 10px rgba(212,175,55,.25), 0 0 20px rgba(177,20,30,.25);
+}
+
+/* Menú superior */
+nav{ background: rgba(0,0,0,.8)!important; border-bottom: 1px solid rgba(212,175,55,.6)!important; }
+nav a:hover{ color: var(--dorado) !important; }
+
+/* Precios en crema/dorado */
+.precio{ color: var(--crema) !important; text-shadow: 0 1px 0 #000; }
+
+/* Botón Comprar: negro a dorado + roja en hover */
+.btn-comprar{
+  background: linear-gradient(180deg, #1a1a1a, #000);
+  color: var(--crema);
+  border: 1px solid rgba(212,175,55,.65);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.6) inset, 0 4px 18px rgba(212,175,55,.15);
+}
+.btn-comprar:hover{
+  background: linear-gradient(180deg, var(--rojo-brillo), #7b0d1a);
+  border-color: var(--dorado-claro);
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 0 16px rgba(225,29,46,.35);
+}
+
+/* Tarjeta base: vidrio negro con marco dorado ornamental */
+.producto-card{
+  background: linear-gradient(180deg, rgba(12,12,12,.85), rgba(8,8,8,.9));
+  border: 1px solid rgba(212,175,55,.35);
+  box-shadow: 0 0 0 2px rgba(0,0,0,.6) inset, 0 12px 24px rgba(0,0,0,.5);
+  position: relative; overflow: hidden;
+}
+/* Esquinas filigrana (decorativas) */
+.producto-card::before, .producto-card::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(24px 24px at 8% 10%, rgba(212,175,55,.35), transparent 70%),
+    radial-gradient(24px 24px at 92% 10%, rgba(212,175,55,.35), transparent 70%),
+    radial-gradient(24px 24px at 8% 90%, rgba(212,175,55,.35), transparent 70%),
+    radial-gradient(24px 24px at 92% 90%, rgba(212,175,55,.35), transparent 70%);
+}
+.producto-card:hover{
+  border-color: var(--dorado);
+  box-shadow: 0 0 0 2px rgba(212,175,55,.25) inset, 0 16px 28px rgba(0,0,0,.6), 0 0 24px rgba(212,175,55,.25);
+  transform: translateY(-4px) scale(1.015);
+}
+
+/* Marco de imagen: camafeo victoriano */
+.imagen-producto{
+  width: 180px; height: 180px; margin:auto; border-radius: 999px;
+  background: radial-gradient(circle at 50% 45%, rgba(255,255,255,.05), rgba(0,0,0,.2));
+  border: 2px solid rgba(212,175,55,.55);
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,.6) inset,
+    0 0 0 1px rgba(248,227,176,.25),
+    0 10px 24px rgba(0,0,0,.45);
+}
+.imagen-producto img{ filter: drop-shadow(0 6px 10px rgba(0,0,0,.45)); }
+
+/* ===============================
+   FORMAS DIFERENTES POR CADA TARJETA
+   (sin tocar tu HTML: usa :nth-child)
+   =============================== */
+/* 1) Arco gótico */
+.grid > .producto-card:nth-child(1){
+  clip-path: polygon(50% 0%, 58% 6%, 66% 14%, 74% 24%, 82% 36%, 90% 50%, 96% 66%, 100% 82%, 100% 100%, 0 100%, 0 82%, 4% 66%, 10% 50%, 18% 36%, 26% 24%, 34% 14%, 42% 6%);
+}
+.grid > .producto-card:nth-child(1) .imagen-producto{
+  clip-path: ellipse(50% 45% at 50% 48%);
+}
+
+/* 2) Escudo / blasón */
+.grid > .producto-card:nth-child(2){
+  clip-path: polygon(50% 0%, 85% 12%, 100% 40%, 85% 82%, 50% 100%, 15% 82%, 0% 40%, 15% 12%);
+}
+.grid > .producto-card:nth-child(2) .imagen-producto{
+  clip-path: polygon(50% 0%, 86% 20%, 86% 80%, 50% 100%, 14% 80%, 14% 20%);
+}
+
+/* 3) Hexágono */
+.grid > .producto-card:nth-child(3){
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.grid > .producto-card:nth-child(3) .imagen-producto{
+  clip-path: polygon(30% 5%, 70% 5%, 95% 50%, 70% 95%, 30% 95%, 5% 50%);
+}
+
+/* 4) Óvalo alto tipo camafeo */
+.grid > .producto-card:nth-child(4){
+  border-radius: 999px / 120px; overflow: hidden;
+}
+.grid > .producto-card:nth-child(4) .imagen-producto{ border-radius: 999px / 70px; }
+
+/* 5) Octágono */
+.grid > .producto-card:nth-child(5){
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+.grid > .producto-card:nth-child(5) .imagen-producto{
+  clip-path: polygon(35% 5%, 65% 5%, 95% 35%, 95% 65%, 65% 95%, 35% 95%, 5% 65%, 5% 35%);
+}
+
+/* 6) "Ataúd" gótico (coffin) */
+.grid > .producto-card:nth-child(6){
+  clip-path: polygon(35% 0%, 65% 0%, 85% 18%, 85% 78%, 65% 100%, 35% 100%, 15% 78%, 15% 18%);
+}
+.grid > .producto-card:nth-child(6) .imagen-producto{
+  clip-path: polygon(40% 5%, 60% 5%, 80% 22%, 80% 78%, 60% 95%, 40% 95%, 20% 78%, 20% 22%);
+}
+
+/* Tooltip: vitral suave */
+.tooltip-info{
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(212,175,55,0.05));
+  border-top: 1px solid rgba(212,175,55,.35);
+}
+
+/* Modal con acabado negro/dorado */
+#modal-producto .modal-content{
+  background: linear-gradient(180deg, #0e0e10, #0a0a0b);
+  border: 1px solid rgba(212,175,55,.55);
+  box-shadow: 0 0 0 2px rgba(0,0,0,.7) inset, 0 18px 36px rgba(0,0,0,.6);
+}
+#modal-producto button{ border-radius: 10px; }
+#modal-producto .bg-yellow-400{ background: var(--dorado) !important; color:#1a1a1a !important; }
+#modal-producto .bg-red-500{ background: var(--rojo) !important; }
+#modal-producto .bg-red-500:hover{ background: var(--rojo-brillo) !important; }
+
+/* Carrito flotante */
+#carrito{
+  background: linear-gradient(180deg, rgba(12,12,12,.96), rgba(8,8,8,.98));
+  border: 1px solid rgba(212,175,55,.45);
+  box-shadow: 0 10px 28px rgba(0,0,0,.55);
+}
+#carrito h3{ color: var(--dorado); font-family: 'Cinzel', serif; }
+#carrito .w-full.bg-red-500{ background: var(--rojo) !important; }
+#carrito .w-full.bg-red-500:hover{ background: var(--rojo-brillo) !important; }
+
+/* Imagen promoción con marco */
+section img[alt^="Promoción"], section img[alt^="Promoción"]{
+  border: 1px solid rgba(212,175,55,.55) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.15);
+}
+
+/* Asegurar contraste de párrafos */
+section p{ color: rgba(255,255,255,.85); }
+
+/* Accesibilidad: foco visible */
+button:focus{ outline: 2px dashed var(--dorado-claro); outline-offset: 2px; }
+
 .btn-comprar:hover {
   transform: scale(1.05);
   box-shadow: 0 0 12px #ffcc80;
