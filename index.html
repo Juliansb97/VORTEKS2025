@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="VORTEKS Suplementos - Potencia tu rendimiento con nuestros productos innovadores en formatos únicos como gomitas con creatina, proteína, preentreno y BCAA.">
- 
+
   <!-- Fuente futurista Orbitron -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
@@ -19,7 +19,7 @@
   
   <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -34,9 +34,26 @@
 </head>
 <body class="bg-black text-gray-100">
 
+  <!-- 🔹 Menú de navegación fijo -->
+  <nav class="fixed top-0 left-0 w-full bg-gray-900 border-b border-yellow-400 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html">
+        <img src="assets/img/LOGO.png" alt="Logo VORTEKS" class="h-12">
+      </a>
+      <ul class="flex space-x-6 text-yellow-300 font-semibold">
+        <li><a href="index.html" class="hover:text-yellow-500">Inicio</a></li>
+        <li><a href="creatina.html" class="hover:text-yellow-500">Creatina</a></li>
+        <li><a href="proteina.html" class="hover:text-yellow-500">Proteína</a></li>
+        <li><a href="energizante.html" class="hover:text-yellow-500">Energizante</a></li>
+        <li><a href="bcaa.html" class="hover:text-yellow-500">BCAA</a></li>
+        <li><a href="#contacto" class="hover:text-yellow-500">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Encabezado -->
-  <header class="flex flex-col items-center justify-center p-6 border-b border-gray-800">
-    <img src="assets/img/LOGO.png" alt="Logo de VORTEKS Suplementos" class="w-90 h-90 mb-0">
+  <header class="flex flex-col items-center justify-center pt-28 pb-6 border-b border-gray-800">
+    <img src="assets/img/LOGO.png" alt="Logo de VORTEKS Suplementos" class="w-40 h-40 mb-4">
     <h1 class="text-3xl font-bold text-yellow-400 text-center">VORTEKS Suplementos</h1>
   </header>
 
@@ -102,9 +119,9 @@
       Mira cómo se entrena nuestro equipo con pasión, fuerza y disciplina.
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <iframe src="https://www.youtube.com/embed/pa78ae4qwYE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded-xl shadow-lg"></iframe>
-      <iframe src="https://www.youtube.com/embed/def456" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded-xl shadow-lg"></iframe>
-      <iframe src="https://www.youtube.com/embed/ghi789" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-64 rounded-xl shadow-lg"></iframe>
+      <iframe src="https://www.youtube.com/embed/pa78ae4qwYE" allowfullscreen class="w-full h-64 rounded-xl shadow-lg"></iframe>
+      <iframe src="https://www.youtube.com/embed/def456" allowfullscreen class="w-full h-64 rounded-xl shadow-lg"></iframe>
+      <iframe src="https://www.youtube.com/embed/ghi789" allowfullscreen class="w-full h-64 rounded-xl shadow-lg"></iframe>
     </div>
   </section>
 
@@ -124,23 +141,23 @@
   </section>
 
   <!-- Contacto -->
-  <section class="p-6">
+  <section id="contacto" class="p-6">
     <h2 class="text-2xl font-bold text-yellow-300 mb-4">Contáctanos</h2>
     <form class="grid gap-4 max-w-xl" onsubmit="return validarFormulario(event)">
-      <input type="text" placeholder="Nombre" required aria-label="Nombre" class="p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-      <input type="email" placeholder="Correo electrónico" required aria-label="Correo electrónico" class="p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-      <textarea placeholder="Mensaje" rows="4" required aria-label="Mensaje" class="p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+      <input type="text" placeholder="Nombre" required class="p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      <input type="email" placeholder="Correo electrónico" required class="p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      <textarea placeholder="Mensaje" rows="4" required class="p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
       <button class="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-300 transition duration-300">Enviar</button>
     </form>
   </section>
 
   <!-- Botón Carrito -->
-  <button onclick="toggleCarrito()" aria-label="Abrir carrito de compras" class="fixed top-6 right-6 bg-yellow-400 text-black p-2 rounded-full shadow-2xl hover:scale-105 transition duration-300 z-50">
+  <button onclick="toggleCarrito()" aria-label="Abrir carrito de compras" class="fixed top-20 right-6 bg-yellow-400 text-black p-2 rounded-full shadow-2xl hover:scale-105 transition duration-300 z-50">
     🛒
   </button>
 
   <!-- Carrito -->
-  <div id="carrito" class="hidden fixed top-20 right-6 bg-gray-900 text-white w-80 p-4 rounded-xl shadow-lg z-50">
+  <div id="carrito" class="hidden fixed top-32 right-6 bg-gray-900 text-white w-80 p-4 rounded-xl shadow-lg z-50">
     <h3 class="text-xl font-bold mb-2 text-yellow-300">Carrito de Compras</h3>
     <div id="carrito-items" class="mb-2 max-h-60 overflow-y-auto"></div>
     <div class="flex justify-between text-yellow-400 font-semibold mb-2">
@@ -151,13 +168,40 @@
   </div>
 
   <!-- Botón WhatsApp -->
-  <a href="https://wa.me/573133732803?text=Hola%20quiero%20más%20información%20sobre%20sus%20productos" target="_blank" aria-label="Enviar mensaje por WhatsApp" class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-xl hover:bg-green-400 hover:scale-110 transition z-50">
+  <a href="https://wa.me/573133732803?text=Hola%20quiero%20más%20información%20sobre%20sus%20productos" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-xl hover:bg-green-400 hover:scale-110 transition z-50">
     📨
   </a>
 
   <!-- Footer -->
-  <footer class="p-4 text-center text-gray-500 text-sm border-t border-gray-800">
-    © 2025 VORTEKS. Todos los derechos reservados.
+  <footer class="p-6 text-center text-gray-400 bg-gray-900 border-t border-gray-800 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Enlaces rápidos -->
+      <div>
+        <h3 class="font-bold text-yellow-400 mb-2">Enlaces rápidos</h3>
+        <ul class="space-y-1">
+          <li><a href="index.html" class="hover:text-yellow-500">Inicio</a></li>
+          <li><a href="creatina.html" class="hover:text-yellow-500">Creatina</a></li>
+          <li><a href="proteina.html" class="hover:text-yellow-500">Proteína</a></li>
+          <li><a href="energizante.html" class="hover:text-yellow-500">Energizante</a></li>
+          <li><a href="bcaa.html" class="hover:text-yellow-500">BCAA</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div>
+        <h3 class="font-bold text-yellow-400 mb-2">Síguenos</h3>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="hover:text-yellow-500">📘</a>
+          <a href="#" class="hover:text-yellow-500">📸</a>
+          <a href="#" class="hover:text-yellow-500">🎥</a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="flex items-center justify-center">
+        <p>© 2025 VORTEKS. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
 </body>
